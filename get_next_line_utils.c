@@ -6,11 +6,12 @@
 /*   By: maanton2 <maanton2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 18:26:16 by maanton2          #+#    #+#             */
-/*   Updated: 2024/11/07 21:25:11 by maanton2         ###   ########.org.br   */
+/*   Updated: 2024/11/08 00:06:03 by maanton2         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char		*d;
@@ -26,6 +27,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -56,6 +58,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	*p_d = '\0';
 	return (src_len);
 }
+
 char	*ft_strdup(const char *s)
 {
 	char		*copy;
