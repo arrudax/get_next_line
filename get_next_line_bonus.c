@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maanton2 <maanton2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:10:04 by maanton2          #+#    #+#             */
-/*   Updated: 2024/11/08 22:24:24 by maanton2         ###   ########.org.br   */
+/*   Updated: 2024/11/09 01:31:24 by maanton2         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*ft_strchr(const char *s, int c)
 {
@@ -84,23 +84,23 @@ char	*get_next_line(int fd)
 {
 	int			bytes;
 	char		*line;
-	static char	*buffer;
+	static char	*buffer[FD_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	bytes = 1;
-	buffer = ft_read_file(&buffer, &bytes, fd);
-	if (!buffer || *buffer == '\0' || bytes == -1)
+	buffer[fd] = ft_read_file(&buffer[fd], &bytes, fd);
+	if (!buffer[fd] || *buffer[fd] == '\0' || bytes == -1)
 	{
-		free(buffer);
-		buffer = NULL;
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (NULL);
 	}
-	line = ft_static_update_buffer(&buffer);
+	line = ft_static_update_buffer(&buffer[fd]);
 	if (!line)
 	{
-		free(buffer);
-		buffer = NULL;
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 	}
 	return (line);
 }
