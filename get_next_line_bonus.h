@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maanton2 <maanton2@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: maanton2 <maanton2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 20:43:23 by maanton2          #+#    #+#             */
-/*   Updated: 2024/11/09 01:18:27 by maanton2         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:03:16 by maanton2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # endif
 
 # include <unistd.h>
-# include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 
